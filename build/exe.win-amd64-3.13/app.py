@@ -9,7 +9,6 @@ app = ctk.CTk()
 app.title("Reload Queue Printer")
 app.geometry("300x200")
 
-
 header_app = ctk.CTkLabel(app, text="Reinicicar fila de impressão")
 header_app.pack(pady=20, padx=10)
 

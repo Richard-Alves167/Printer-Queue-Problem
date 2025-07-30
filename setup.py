@@ -2,11 +2,11 @@ from cx_Freeze import setup, Executable
 
 build_exe_options = {
     "packages": ["os","customtkinter"],
-    "include_files": ["app.py", "main.py", "pythonIcon.png"],
+    "include_files": ["app.py", "main.py", "appIcon.ico"],
 }
 
 executables = [
-    Executable("main.py", base="Win32GUI", icon="pythonIcon.png")
+    Executable("app.py", base="Win32GUI", target_name="App Debug Printer", icon="appIcon.ico")
 ]
 
 setup(
