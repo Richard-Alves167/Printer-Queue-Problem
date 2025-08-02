@@ -1,6 +1,22 @@
 from main import ReloadPrintQueuePrinter
 import customtkinter as ctk
 import os
+import ctypes
+import sys
+import time
+
+def is_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+    
+if not is_admin() and "--as-admin" not in sys.argv:
+    params = f'"{__file__}" --as-admin'
+    ctypes.windll.shell32.ShellExecuteW(
+        None, "runas", sys.executable, params, None, 1
+    )
+    sys.exit()
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
