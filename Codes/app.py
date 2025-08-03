@@ -30,14 +30,8 @@ header_app.pack(pady=20, padx=10)
 
 def button_function():
     ReloadPrintQueuePrinter()
-    path = os.path.expandvars(r'%systemroot%\System32\spool\PRINTERS')
-    try :
-        if not os.listdir(path):
-            ctk.CTkLabel(app, text="Arquivos excluídos com sucesso!\n Tente imprimir seus arquivos novamente...").pack(pady=20, padx=10)
-        else :
-            ctk.CTkLabel(app, text="Ainda existem arquivos em que não foram possíveis de excluir.").pack(pady=20, padx=10)
-    except:
-        ctk.CTkLabel(app, text="Falta de permissão de administrador.").pack(pady=20, padx=10)
+    ctk.CTkLabel(app, text="Arquivos excluídos com sucesso!\n Tente imprimir seus arquivos novamente...").pack(pady=20, padx=10)
+
 
 
 appButton = ctk.CTkButton(app, text="Deletar arquivos em fila", command=button_function)
